@@ -19,17 +19,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class App {
     public static void main(String[] args) throws IOException {
-        
-        System.setProperty("webdriver.gecko.driver", "c:\\geckodriver\\geckodriver.exe");
+        String webSite = "https://e2etec.com.br";
+        String searchPattern = "//div[@id='panel-w5f11b62f8fe0c-0-0-0']/div[1]/div[1]/p[1]";
+
         WebDriver driver = new FirefoxDriver();
-
-        driver.get("https://e2etec.com.br");
-
-        WebElement telefoneEmail = driver
-                .findElement(By.xpath("//div[@id='panel-w5f11b62f8fe0c-0-0-0']/div[1]/div[1]/p[1]"));
+        driver.get(webSite);
+        WebElement telefoneEmail = driver.findElement(By.xpath(searchPattern));
 
         String fileText = telefoneEmail.getText();
-        
+
         System.out.println("------------------------");
         System.out.println(fileText);
         System.out.println("------------------------");
