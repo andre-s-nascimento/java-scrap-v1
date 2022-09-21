@@ -27,7 +27,7 @@ public class App {
         WebDriver driver = new FirefoxDriver();
         driver.get(webSite);
         WebElement telefoneEmail = driver.findElement(By.xpath(searchPattern));
-        Thread.sleep(2000);
+        Thread.sleep(2100);
 
         //Prepara os dados para criar o arquivo txt
         String fileText = telefoneEmail.getText();
